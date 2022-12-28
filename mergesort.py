@@ -43,10 +43,23 @@ def mergeSort(input_list):
 
 
 my_list = [54, 26, 93, 17, 77, 31, 44, 55, 20]
+
 x = range(len(my_list))
-plt.plot(x, my_list)
-plt.show()
+
+fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2, sharey = True, figsize=(14, 7))
+
+ax1 = plt.subplot(1, 2, 1)
+plt.ylabel("Wert", fontsize=20) 
+plt.xlabel("Position in Liste", fontsize=20)
+x = range(len(my_list))
+plt.scatter(x, my_list, label="Listeneintrag")
+plt.title("Liste vor Mergesort",fontsize=20)
+plt.legend(loc="upper right", frameon=True, fontsize=15)
+
 mergeSort(my_list)
-x = range(len(my_list))
-plt.plot(x, my_list)
-plt.show()
+
+ax2 = plt.subplot(1, 2, 2)
+plt.xlabel("Position in Liste", fontsize=20)
+plt.scatter(x, my_list, label="Listeneintrag")
+plt.title("Liste nach Mergesort", fontsize=20)
+plt.legend(loc="upper left", frameon=True, fontsize=15);
